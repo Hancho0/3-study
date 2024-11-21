@@ -13,15 +13,15 @@ C/C++에서 프로그램이 main() 함수에서 시작해서 main() 함수가 �
 
 초기화 부분을 담당하는 WinMain() 함수는 먼저 윈도우 클래스를 만들어 등록하고, 그 다음 프레임 윈도우를 생성하여 화면에 표시한다.
 
-- **[ WinMain() 함수의 원형과 초기화 내용 ]**
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCmdShow)
-{
-윈도우 클래스 생성
-윈도우 클래스 등록
-프레임 윈도우 생성
-프레임 윈도우 화면에 표시
-메시지 큐로부터 메시지를 받아 해당 프로시저로 보냄
-}
+- **[ WinMain() 함수의 원형과 초기화 내용 ]** <br>
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCmdShow)<br>
+{<br>
+윈도우 클래스 생성<br>
+윈도우 클래스 등록<br>
+프레임 윈도우 생성<br>
+프레임 윈도우 화면에 표시<br>
+메시지 큐로부터 메시지를 받아 해당 프로시저로 보냄<br>
+}<br>
 
 - **[ WinMain() 함수 매개변수 ]**
 - WINAPI : 윈도우 애플리케이션
@@ -30,14 +30,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLin
 - lpszCmdLine : 프로그램을 구동할 때 같이 들어오는 매개변수로 실행 파일의 경로 등을 나타내는 문자열 포인터이다.
 - nCmdShow : 윈도우가 처음화면에 표시될 때 최대화, 최소화 또는 정상 상태로 보여줄 것인지 결정해주는 매개변수이다.
 
-- **[ WndProc() 함수의 원형과 메시지 처리 형태 ]** // WndProc() 함수는 윈도우 시스템에서 들어온 메시지를 switch 문을 이용하여 처리하는 루틴이다.
-LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
-{
-switch(message)
-{
-해당 메시지에 대한 처리
-}
-}
+- **[ WndProc() 함수의 원형과 메시지 처리 형태 ]** // WndProc() 함수는 윈도우 시스템에서 들어온 메시지를 switch 문을 이용하여 처리하는 루틴이다.<br>
+LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)<br>
+{<br>
+switch(message)<br>
+{<br>
+해당 메시지에 대한 처리<br>
+}<br>
+}<br>
 
 LRESULT는 결괏값을 저장하는 32bit 자료형이다.
 CALLBACK 함수는 뒤에서 어떤 메시지에 의해 감추어진 형태로 구동되는 함수라는 의미로 역으로 호출받는 함수이다.
